@@ -1,0 +1,25 @@
+<button class="btn btn-primary" (click)="togglediv()" >{{show ? 'Hide List of Posts' : 'view List of Posts'}}</button>
+<table *ngIf="show" style="width: 100%; margin-top: 20px" id="rowby">
+    <thead>
+      <tr>
+        <th colspan="5">List of Posts :</th>
+      </tr>
+      <tr>
+      <th>Post Id</th>
+      <th>Post Title</th>
+      <th>Post Description</th>
+      <th>Username</th>
+      <th>Read more</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor=" let data of datapart">
+      <td>{{ data.postId }}</td>
+      <td>{{ data.title }}</td>
+      <td>{{ data.body }}</td>
+      <td>{{ data.UserName }}</td>
+      <td><a href="">Read more</a></td>
+    </tr>
+    </tbody>
+    <button type="button" id="btn_goBack" (click)="goBack()" class="btn btn-primary">Go Back</button>
+  </table>

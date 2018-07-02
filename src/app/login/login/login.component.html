@@ -1,0 +1,12 @@
+
+<form>
+  <div class="form-group">
+    <label for="uname">Usename</label>
+    <input type="text" class="form-control" id="uname" name="username" [(ngModel)]="userdata.username"/>
+  </div>
+  <div class="form-group">
+      <label for="pwd">Password</label>
+      <input type="password" class="form-control" id="pwd" name="password" [(ngModel)]="userdata.password"/>
+    </div>
+    <button type="submit" (click)="regUser()" class="btn-default btn">Login</button>
+</form>

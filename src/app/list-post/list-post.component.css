@@ -1,0 +1,28 @@
+tr,td,th{
+    border: 1px solid black;
+    padding: 5px;
+}
+#rowby tr:nth-child(even){background-color: #f2f2f2;}
+
+#rowby tr:hover {background-color: #ddd;}
+
+#rowby {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#rowby th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+#rowby td, #rowby th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#btn_goBack{
+    margin-top: 10px;
+}

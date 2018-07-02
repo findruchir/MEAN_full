@@ -1,0 +1,56 @@
+<html>
+<head>
+
+</head>
+
+<body>
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-lg-6 col-md-offset-3">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Enter Your Details Here
+			</div>
+			<div class="panel-body">
+				<form name="myform">
+					<div class="form-group">
+						<label for="firstName">First Name *</label>
+						<input id="firstName" name="firstName" class="form-control" type="text" [(ngModel)]="regData.firstName">
+							<div>*First name is required</div>
+					</div>
+					<div class="form-group">
+						<label for="lastname">Last Name *</label>
+						<input id="lastname" name="lastName" class="form-control" type="text" [(ngModel)]="regData.lastName">
+						<!-- <span id="error_lastname" class="text-danger"></span> -->
+					</div>
+					<div class="form-group">
+						<label for="username">Username *</label>
+						<input id="uname" name="userName" [(ngModel)]="regData.userName" class="form-control" type="text">
+						<!-- <span id="error_age" class="text-danger"></span> -->
+					</div>
+					<div class="form-group">
+						<label for="password">Password *</label>
+						<input type="password" name="password" id="pwd" [(ngModel)]="regData.password" class="form-control">
+						<!-- <span id="error_dob" class="text-danger"></span> -->
+					</div>
+					
+					<div class="form-group">
+						<label for="phone">Phone Number *</label>
+						<input type="text" id="phone" name="phoneNumber" [(ngModel)]="regData.phoneNumber" class="form-control" >
+						<span id="error_phone" class="text-danger"></span>
+					</div>
+          
+          <div class="form-group">
+              <label for="location">Location *</label>
+              <input type="text" id="location" name="location" [(ngModel)]="regData.location" class="form-control" >
+              <!-- <span id="error_phone" class="text-danger"></span> -->
+            </div>
+					
+					<button id="submit" (click)="regFunc()" class="btn btn-primary center">Submit</button>
+			
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
