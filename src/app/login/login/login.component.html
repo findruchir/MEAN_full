@@ -1,5 +1,5 @@
 
-<form>
+ <!-- <form>
   <div class="form-group">
     <label for="uname">Usename</label>
     <input type="text" class="form-control" id="uname" name="username" [(ngModel)]="userdata.username"/>
@@ -9,4 +9,35 @@
       <input type="password" class="form-control" id="pwd" name="password" [(ngModel)]="userdata.password"/>
     </div>
     <button type="submit" (click)="regUser()" class="btn-default btn">Login</button>
-</form>
+</form> -->
+		
+
+<body>
+<div class="background-wrap">
+	<div class="background"></div>
+  </div>
+  
+  <form id="accesspanel" action="login" method="post">
+	<h1 id="litheader">MARLABS</h1>
+	<div class="inset">
+	  <p>
+		<input type="text" name="username" id="email" placeholder="Email address" [(ngModel)]="userdata.username">
+	  </p>
+	  <p>
+		<input type="password" name="password" id="password" placeholder="Access code">
+	  </p>
+	  <div style="text-align: center;">
+		<div class="checkboxouter">
+		  <input type="checkbox" name="password" id="remember" value="Remember" [(ngModel)]="userdata.password">
+		  <label class="checkbox"></label>
+		</div>
+		<label for="remember">Remember me for 14 days</label>
+	  </div>
+	  <input class="loginLoginValue" type="hidden" name="service" value="login" />
+	</div>
+	<p class="p-container">
+	  <input type="submit" (click)="regUser()" name="Login" id="go" >
+	</p>
+  </form>
+</body>
+

@@ -2,7 +2,8 @@ tr,td,th{
     border: 1px solid black;
     padding: 5px;
 }
-#rowby tr:nth-child(even){background-color: #f2f2f2;}
+#rowby tr:nth-child(even){background-color:#ede2c7;}
+#rowby tr:nth-child(odd){background-color:white;}
 
 #rowby tr:hover {background-color: #ddd;}
 

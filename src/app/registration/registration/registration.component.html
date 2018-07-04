@@ -1,56 +1,69 @@
 <html>
+
 <head>
 
 </head>
 
-<body>
-<div class="row">
-    <div class="col-md-6 col-sm-12 col-lg-6 col-md-offset-3">
-		<div class="panel panel-primary">
-			<div class="panel-heading">Enter Your Details Here
-			</div>
-			<div class="panel-body">
-				<form name="myform">
-					<div class="form-group">
-						<label for="firstName">First Name *</label>
-						<input id="firstName" name="firstName" class="form-control" type="text" [(ngModel)]="regData.firstName">
-							<div>*First name is required</div>
-					</div>
-					<div class="form-group">
-						<label for="lastname">Last Name *</label>
-						<input id="lastname" name="lastName" class="form-control" type="text" [(ngModel)]="regData.lastName">
-						<!-- <span id="error_lastname" class="text-danger"></span> -->
-					</div>
-					<div class="form-group">
-						<label for="username">Username *</label>
-						<input id="uname" name="userName" [(ngModel)]="regData.userName" class="form-control" type="text">
-						<!-- <span id="error_age" class="text-danger"></span> -->
-					</div>
-					<div class="form-group">
-						<label for="password">Password *</label>
-						<input type="password" name="password" id="pwd" [(ngModel)]="regData.password" class="form-control">
-						<!-- <span id="error_dob" class="text-danger"></span> -->
-					</div>
-					
-					<div class="form-group">
-						<label for="phone">Phone Number *</label>
-						<input type="text" id="phone" name="phoneNumber" [(ngModel)]="regData.phoneNumber" class="form-control" >
-						<span id="error_phone" class="text-danger"></span>
-					</div>
-          
-          <div class="form-group">
-              <label for="location">Location *</label>
-              <input type="text" id="location" name="location" [(ngModel)]="regData.location" class="form-control" >
-              <!-- <span id="error_phone" class="text-danger"></span> -->
-            </div>
-					
-					<button id="submit" (click)="regFunc()" class="btn btn-primary center">Submit</button>
-			
-				</form>
+<body >
+		<div class="background-wrap">
+				<div class="background"></div>
+			  </div>
 
+	<div>
+		<div class="col-md-6 col-sm-12 col-lg-6 col-md-offset-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Enter Your Details Here
+				</div>
+				<div class="panel-body">
+					<form name="myform" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="needs-validation" novalidate>
+						<div class="form-group">
+							<label for="firstName">First Name *</label>
+							<input id="firstName" name="firstName" class="form-control" type="text" [(ngModel)]="regData.firstName" #firstnameRef="ngModel"
+							 required>
+							<div *ngIf="!firstnameRef.valid && firstnameRef.touched" class="alert alert-danger">* First name is required </div>
+						</div>
+						<div class="form-group">
+							<label for="lastname">Last Name *</label>
+							<input id="lastname" name="lastName" class="form-control" type="text" [(ngModel)]="regData.lastName" #lastnameref="ngModel"
+							 required>
+							<div *ngIf="!lastnameref.valid && lastnameref.touched" class="alert alert-danger">* Last name is required </div>
+						</div>
+
+						<div class="form-group">
+							<label for="username">Username *</label>
+							<input id="uname" name="userName" [(ngModel)]="regData.userName" class="form-control" type="text" #usernameRef="ngModel"
+							 required>
+							<div *ngIf="!usernameRef.valid && usernameRef.touched" class="alert alert-danger">*  Username is required </div>
+						</div>
+						<div class="form-group">
+							<label for="password">Password *</label>
+							<input type="password" name="password" id="pwd" [(ngModel)]="regData.password" class="form-control" #passwordRef="ngModel"
+							 required>
+							<div *ngIf="!passwordRef.valid && passwordRef.touched" class="alert alert-danger">* Password is required </div>
+						</div>
+
+						<div class="form-group">
+							<label for="phone">Phone Number *</label>
+							<input type="text" id="phone" name="phoneNumber" [(ngModel)]="regData.phoneNumber" class="form-control" #phoneNumberRef="ngModel" required>
+							<div *ngIf="!phoneNumberRef.valid && phoneNumberRef.touched" class="alert alert-danger">* Phone number is required ></div>
+						</div>
+
+						<div class="form-group">
+							<label for="location">Location *</label>
+							<input type="text" id="location" name="location" [(ngModel)]="regData.location" class="form-control" #locationRef="ngModel" required>
+							<div *ngIf="!locationRef.valid && locationRef.touched" class="alert alert-danger">* Location is required ></div>
+						</div>
+
+						<button id="submit" (click)="regFunc()" class="btn btn-primary center">Submit</button>
+
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+
+	<popup #popup1 (confirmClick)="YourConfirmEvent()">You are successfully registered!
+		</popup> 
 </body>
+
 </html>

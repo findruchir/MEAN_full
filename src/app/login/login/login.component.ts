@@ -9,13 +9,16 @@ import {LoginService} from '../../login-check/login.service';
 })
 export class LoginComponent implements OnInit {
       userdata :any = {};
-     
+        
   constructor(private _router : Router, private _loginService : LoginService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
     regUser(){
         this._loginService.LoginCheck(this.userdata);
     }
-            
+       
+ 
     
 }

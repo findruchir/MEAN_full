@@ -11,3 +11,10 @@
 {
     background-color: #EDEDED;
 }
+.alert-danger{
+    border: 1px solid red;
+}
+/* .background {
+    background: url('app\login\super.jpg'); 
+    
+} */

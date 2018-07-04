@@ -6,7 +6,7 @@ import { LoginServiceService} from './login-service/login-service.service';
 import { LoginService} from './login-check/login.service';
 import {CookieService } from 'ngx-cookie-service';
 import { CreatePostService } from './home/create-post.service';
-
+import {PopupModule} from 'ng2-opd-popup';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation/navigation.component';
@@ -29,6 +29,7 @@ import { ListPostComponent } from './list-post/list-post.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    PopupModule.forRoot(),
     RouterModule.forRoot([
       {
         path: 'home',
@@ -42,7 +43,6 @@ import { ListPostComponent } from './list-post/list-post.component';
       {
         path: 'registration',
         component: RegistrationComponent,
-        canActivate:[LoginService]
       },
       {
         path: 'listPosts',
